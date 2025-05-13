@@ -1,0 +1,103 @@
+.App {
+  text-align: center;
+}
+
+.help {
+  float: inline-end;
+}
+
+.menuGroup{
+  margin-left: auto;
+  order: 2;
+}
+
+.form{
+  margin-bottom: 10px;
+}
+
+.form-control{
+  border: none;
+  border-bottom: 2px grey solid;
+  border-radius: 0%;
+  
+  &&:focus{
+    box-shadow: none;
+    border-bottom: 2px blue solid;
+    transition: ease-in-out 2s;
+  }
+}
+
+.seLect{
+  border: none !important;
+  border-radius: 0%;
+  width: 100%;
+  border-bottom: 2px blue solid;
+  &&:focus{
+    box-shadow: none !important;
+    border-bottom: 2px blue solid;
+    transition: ease-in-out 2s;
+  }
+}
+
+.registerStep{
+  margin-bottom: 30px;
+}
+
+.googleLogo{
+  font-size: 1.3em;
+}
+
+.searchLabel{
+  margin-top: 8px;
+}
+
+.category{
+  cursor: pointer;
+
+  .options {
+    float: right;
+    display: flex;
+    direction: row-reverse;
+    margin-right: 10px;
+  }
+  .icon {
+    float: right;
+    margin-top: 2px;
+    margin-right: 5px;
+  }
+    
+}
+
+.imgrotate{
+  margin-left: 50px;
+  animation: rotateimg 3s linear infinite;
+  -webkit-animation: rotateimg 3s linear infinite;
+  -moz-animation: rotateimg 3s linear infinite;
+}
+
+@-webkit-keyframes rotateimg {
+  100%{
+    -webkit-transform: rotate(360deg);
+  }
+}
+@keyframes rotateimg {
+  100%{
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@-moz-keyframes rotateimg {
+  100%{
+    -moz-transform: rotate(360deg);
+  }
+}
+
+.jumbotron{
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.slider img,.defaultCarous img{
+  height: 450px;
+  object-fit: cover;
+}
