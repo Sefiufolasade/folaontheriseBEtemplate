@@ -23,7 +23,8 @@ const UpdateSub = () => {
     
     const loadSubs = () => {
         getSub(slug).then((c) => {
-            setcategory(c.data.parent)
+            setcategory(c.data.sub.parent)
+            setName(c.data.sub.name)
         })
         getCategories().then((c) => setcategories(c.data))
     }
@@ -35,8 +36,8 @@ const UpdateSub = () => {
         .then(res => {
             setloading(false);
             setName('')
-            toast.success(`${res.data.name} category created`)
-            navigate('admin/subs')
+            toast.success(`${res.data.name} category updated`)
+            navigate('/admin/sub')
         })
         .catch(err =>{
             // console.log(err);

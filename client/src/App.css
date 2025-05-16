@@ -6,52 +6,52 @@
   float: inline-end;
 }
 
-.menuGroup{
+.menuGroup {
   margin-left: auto;
   order: 2;
 }
 
-.form{
+.form {
   margin-bottom: 10px;
 }
 
-.form-control{
+.form-control {
   border: none;
   border-bottom: 2px grey solid;
   border-radius: 0%;
-  
-  &&:focus{
+
+  &&:focus {
     box-shadow: none;
     border-bottom: 2px blue solid;
     transition: ease-in-out 2s;
   }
 }
 
-.seLect{
+.seLect {
   border: none !important;
   border-radius: 0%;
   width: 100%;
   border-bottom: 2px blue solid;
-  &&:focus{
+  &&:focus {
     box-shadow: none !important;
     border-bottom: 2px blue solid;
     transition: ease-in-out 2s;
   }
 }
 
-.registerStep{
+.registerStep {
   margin-bottom: 30px;
 }
 
-.googleLogo{
+.googleLogo {
   font-size: 1.3em;
 }
 
-.searchLabel{
+.searchLabel {
   margin-top: 8px;
 }
 
-.category{
+.category {
   cursor: pointer;
 
   .options {
@@ -65,10 +65,9 @@
     margin-top: 2px;
     margin-right: 5px;
   }
-    
 }
 
-.imgrotate{
+.imgrotate {
   margin-left: 50px;
   animation: rotateimg 3s linear infinite;
   -webkit-animation: rotateimg 3s linear infinite;
@@ -76,28 +75,126 @@
 }
 
 @-webkit-keyframes rotateimg {
-  100%{
+  100% {
     -webkit-transform: rotate(360deg);
   }
 }
 @keyframes rotateimg {
-  100%{
+  100% {
     -webkit-transform: rotate(360deg);
     transform: rotate(360deg);
   }
 }
 @-moz-keyframes rotateimg {
-  100%{
+  100% {
     -moz-transform: rotate(360deg);
   }
 }
 
-.jumbotron{
+.jumbotron {
   margin-top: 50px;
   margin-bottom: 50px;
 }
 
-.slider img,.defaultCarous img{
+.slider img,
+.defaultCarous img {
   height: 450px;
   object-fit: cover;
+}
+
+.coming-soon {
+  background: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0.7),
+      rgba(255, 255, 255, 0.2)
+    ),
+    url("../public/pexels-heyho-5998120.jpg");
+  height: 80vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin-right: 0%;
+}
+.coming-soon > div > div:nth-child(1) {
+  div > h3,
+  div > h5 {
+    @media (width < 768px) {
+      display: none;
+    }
+  }
+  div > img {
+    @media (width < 768px) {
+      position: absolute;
+      top: 80%;
+      left: 33%;
+      transform: translate(-80%, -33%);
+    }
+  }
+  .otherinnterior {
+    @media (width < 768px) {
+      display: none;
+    }
+  }
+}
+
+.comingSoon-object {
+  opacity: 50%;
+  margin-left: 28px;
+  margin-top: -30px;
+}
+
+.playfair-display {
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.countdown-container {
+  top: 60%;
+  left: 60%;
+  transform: translate(-60%, -60%);
+  position: absolute;
+}
+
+.countdown-container > div:nth-child(1) {
+  display: flex;
+  justify-content: center;
+}
+.countdown-container > div:nth-child(2) {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+}
+
+.countdown-container .countdown-unit-card {
+  min-width: 60px;
+  height: 50px;
+  padding: 5px;
+  box-shadow: 1px 1px 1px 1px grey;
+}
+.countdown-container .countdown-unit-card > p {
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  font-weight: 800;
+  font-size: 30px;
+  font-style: normal;
+  color: #856a17;
+}
+
+.gold {
+  color: #856a17;
+}
+
+.text-bottom {
+  position: absolute;
+  top: 95%;
+  left: 80%;
+  transform: translate(-95%, -80%);
+  @media (width < 768px) {
+    position: relative;
+    top: 1050%;
+    left: 90%;
+    transform: translate(-50%, 0%);
+  }
 }

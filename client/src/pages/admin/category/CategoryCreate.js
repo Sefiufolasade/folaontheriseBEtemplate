@@ -90,7 +90,7 @@ const CategoryCreate = () => {
                 <hr/>
                 <h3>Categories List.</h3>
                 {categories.filter(searched(keyword)).map((c) => (
-                    <div className='alert alert-secondary category' key={c.id}>{c.name} {" "} <span className='btn btn-sm options text-danger' onClick={() => handleRemove(c.slug)}><DeleteOutlined className='icon'/>delete</span> {" "} <Link className='btn btn-sm options text-primary' to={`/admin/category/${c.slug}`} ><EditOutlined className='icon'/> Edit</Link></div>
+                    <div className='alert alert-secondary category' key={c._id}>{c.name} {" "} <span className='btn btn-sm options text-danger' onClick={() => handleRemove(c.slug)}><DeleteOutlined className='icon'/>delete</span> {" "} <Link className='btn btn-sm options text-primary' to={`/admin/category/${c.slug}`} ><EditOutlined className='icon'/> Edit</Link></div>
                 ))}
             </div>
         </div>

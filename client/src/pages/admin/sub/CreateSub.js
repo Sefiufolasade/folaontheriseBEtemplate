@@ -103,7 +103,7 @@ const CreateSub = () => {
                 <hr/>
                 <h3>Sub-Categories List.</h3>
                 {subs.filter(searched(keyword)).map((c) => (
-                    <div className='alert alert-secondary category' key={c.id}>{c.name} {" "} <span className='btn btn-sm options text-danger' onClick={() => handleRemove(c.slug)}><DeleteOutlined className='icon'/>delete</span> {" "} <Link className='btn btn-sm options text-primary' to={`/admin/sub/${c.slug}`} ><EditOutlined className='icon'/> Edit</Link></div>
+                    <div className='alert alert-secondary category' key={c._id}>{c.name} {" "} <span className='btn btn-sm options text-danger' onClick={() => handleRemove(c.slug)}><DeleteOutlined className='icon'/>delete</span> {" "} <Link className='btn btn-sm options text-primary' to={`/admin/sub/${c.slug}`} ><EditOutlined className='icon'/> Edit</Link></div>
                 ))} 
             </div>
         </div>
