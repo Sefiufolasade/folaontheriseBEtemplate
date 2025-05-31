@@ -8,7 +8,7 @@ export const createProduct = async (product, authtoken) =>
         }
     });
 
-export const updateProduct = async (product, slug, authtoken) => 
+export const updateProduct = async (slug, product, authtoken) => 
     await axios.put(`http://localhost:8000/api/product/${slug}`, product, 
     {
         headers: {

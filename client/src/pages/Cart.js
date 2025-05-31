@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useCallback } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { Link } from 'react-router-dom'
 const Cart = () => {
@@ -10,6 +10,17 @@ const Cart = () => {
             return currentValue + (nextValue.count * nextValue.price)
         }, 0)
     }
+    const handleDelete = useCallback((position) => {
+        if(typeof window !== "undefined"){
+            let updatedCart = cart
+            updatedCart.splice(position, 1)
+            localStorage.setItem("cart", JSON.stringify(updatedCart))
+            dispatch({
+                type: "ADD_TO_CART",
+                payload: updatedCart
+            })
+        }
+    }, [cart, dispatch])
 
   return (
     <>
@@ -23,8 +34,8 @@ const Cart = () => {
                         <h4>No products in cart <Link to='/shop'>Continue Shopping</Link></h4>:
                         cart.map((c,i) =>
                             <>
-                                <div key={c._id}>
-                                    <img src={c.images[0].url} style={{width: '100px', height:'100px'}}/> - {c.title} - {c.price} - {c.color} - <Link to={`/product-details/${c.slug}`}>View Product</Link> - <a>Remove Product </a>
+                                <div className='flex' key={c._id}>
+                                    <img src={c.images[0].url} style={{width: '100px', height:'100px', objectFit: "contain" }} alt={c.title}/> - {c.title} - {c.price} - {c.color} - <Link to={`/product-details/${c.slug}`}>View Product</Link> - <p onClick={() => handleDelete(i)} className='text-danger pointer'>Remove Product </p>
                                 </div>
                                 <br/>
                             </>

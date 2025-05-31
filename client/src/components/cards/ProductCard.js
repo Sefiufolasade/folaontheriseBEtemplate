@@ -15,7 +15,7 @@ const ProductCard = ({product}) => {
 
     const handleAddToCart = () => {
         let cart = []
-        if(typeof window !== undefined) {
+        if(typeof window !== "undefined") {
             //if cart is in local storage
             if(localStorage.getItem('cart')){
                 cart = JSON.parse(localStorage.getItem('cart'))
@@ -37,15 +37,16 @@ const ProductCard = ({product}) => {
     }
   return (
     <>
-        {product && product.ratings && product.ratings.length > 0 ? (Newrating(product)):<div className='text-center pt-1 pb-3'>No ratings yet</div>}
+        {product && product.ratings && product.ratings.length > 0 ? (Newrating(product)):<div className='d-flex pt-1 justify-content-center mb-0'><p>No ratings yet</p></div>}
         <Card
             hoverable
             style={{
-            width: 240,
+            width: 200,
             marginBottom: 10,
+            marginTop: 0,
             }}
-            className='p-1'
-            cover={<img alt="example" style={{height: 150}}src={images && images.length ? images[0].url:"https://res.cloudinary.com/dvdy3c2af/image/upload/v1689964304/cld-sample-2.jpg"} />}
+            className='p-1 mt-0'
+            cover={<img alt="example" style={{height: 150}}src={images && images.length ? images[0].url:"https://res.cloudinary.com/dvdy3c2af/image/upload/v1748417009/Innterior_qtmjp7.png"} />}
             actions={[
                 <Link to={`/product-details/${slug}`}>
                     <EyeOutlined className='text-success'/><br/>View Details

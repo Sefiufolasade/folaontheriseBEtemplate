@@ -91,9 +91,7 @@ const UpdateCoupon = () => {
           className="form-control"
           name="couponValue"
           min={0}
-          onChange={(e) =>
-            handleChange(e)
-          }
+          onChange={(e) => handleChange(e)}
           value={couponValue}
           autoFocus
           required
@@ -104,9 +102,7 @@ const UpdateCoupon = () => {
           className="form-control"
           name="minAmount"
           min={0}
-          onChange={(e) =>
-            handleChange(e)
-          }
+          onChange={(e) => handleChange(e)}
           value={minAmount}
           autoFocus
         />
@@ -116,9 +112,7 @@ const UpdateCoupon = () => {
           className="form-control"
           name="maxAmount"
           min={0}
-          onChange={(e) =>
-            handleChange(e)
-          }
+          onChange={(e) => handleChange(e)}
           value={maxAmount}
           autoFocus
         />
@@ -147,7 +141,7 @@ const UpdateCoupon = () => {
   return (
     <div className="container-fluid">
       <div className="row">
-        <div className="col-md-2">
+        <div className="col-md-3 col-sm-4">
           <AdminNav />
         </div>
         <div className="col">{couponForm()}</div>

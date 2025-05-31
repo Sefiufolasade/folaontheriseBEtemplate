@@ -25,24 +25,29 @@ import ProductUpdate from "./pages/admin/product/ProductUpdate";
 import AllProducts from "./pages/admin/product/AllProducts";
 import ProductDetails from "./pages/admin/product/ProductDetails";
 import UpdateCategory from "./pages/admin/category/UpdateCategory";
+import RoleApplicationPage from "./pages/admin/RoleManagement/RoleApplication";
+import CouponCreate from "./pages/admin/coupon/CreateCoupon";
+import UpdateCoupon from "./pages/admin/coupon/UpdateCoupon";
+import CreateSub from "./pages/admin/sub/CreateSub";
+import UpdateSub from "./pages/admin/sub/UpdateSub";
+
 import CategoryHome from "./pages/category/CategoryHome";
 import SubHome from "./pages/sub/SubHome";
 import Shop from "./pages/Shop";
 import Cart from "./pages/Cart";
-import CreateSub from "./pages/admin/sub/CreateSub";
-import UpdateSub from "./pages/admin/sub/UpdateSub";
 
 import { auth } from "./pages/auth/Firebase";
 import { useDispatch } from "react-redux";
 import { onAuthStateChanged } from "firebase/auth";
 import { currentUser } from "./functions/auth";
-import CouponCreate from "./pages/admin/coupon/CreateCoupon";
-import UpdateCoupon from "./pages/admin/coupon/UpdateCoupon";
 import ComingSoon from "./components/wildcards/ComingSoon";
+import TermsAndConditions from "./pages/user/UserManagement/TermsAndConditions";
+import PaymentManagement from "./pages/user/UserManagement/PaymentManagement";
+import UserProfile from "./pages/user/UserManagement/UserProfile";
 
 const App = () => {
   const dispatch = useDispatch();
-  const isComingSoon = true;
+  const isComingSoon = process.env.COMING_SOON || false;
 
   // to check firebase auth state
   useEffect(() => {
@@ -71,7 +76,7 @@ const App = () => {
 
   return (
     <>
-      <Header isComingSoon={isComingSoon}/>
+      <Header isComingSoon={isComingSoon} />
       <ToastContainer />
       <Routes>
         {isComingSoon ? (
@@ -79,7 +84,7 @@ const App = () => {
         ) : (
           <>
             <Route path="/" element={<Home />} />
-            <Route path="/help" element={<Help />} />
+            <Route path="/profile" element={<Help />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
             <Route path="/register/complete" element={<RegisterComplete />} />
@@ -111,6 +116,19 @@ const App = () => {
               <Route path="/user/history" element={<History />} />
               <Route path="/user/wishlist" element={<Wishlist />} />
               <Route path="/user/password" element={<Password />} />
+              <Route
+                path="/user/terms-and-conditions"
+                element={<TermsAndConditions />}
+              />
+              <Route path="/user/role-application" element={<RoleApplicationPage/>}/>
+              <Route
+                path="/user/payment-management"
+                element={<PaymentManagement />}
+              />
+              <Route
+                path="/user/profile"
+                element={<UserProfile />}
+              />
             </Route>
           </>
         )}

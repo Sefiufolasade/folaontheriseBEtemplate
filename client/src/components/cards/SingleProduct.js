@@ -29,7 +29,7 @@ const SingleProduct = ({product, onStarClick}) => {
     }
     const handleAddToCart = () => {
         let cart = []
-        if(typeof window !== undefined) {
+        if(typeof window !== "undefined") {
             //if cart is in local storage
             if(localStorage.getItem('cart')){
                 cart = JSON.parse(localStorage.getItem('cart'))

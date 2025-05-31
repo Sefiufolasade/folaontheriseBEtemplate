@@ -9,6 +9,17 @@ const userSchema = new mongoose.Schema(
             required: true,
             index: true,
         },
+        nickName: {
+            type: String,
+            unique: true,
+            text: true,
+            index: true,
+        },
+        mobileNo: {
+            type: String,
+            unique: true,
+            sparse: true, // allows multiple null values
+        },          
         role: {
             type: String,
             default: 'subscriber'

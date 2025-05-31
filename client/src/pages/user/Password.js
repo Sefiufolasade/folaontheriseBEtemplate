@@ -3,8 +3,11 @@ import UserNav from '../../components/nav/UserNav'
 import { auth } from '../auth/Firebase'
 import { updatePassword } from 'firebase/auth'
 import { toast } from 'react-toastify'
+import { useSelector } from 'react-redux'
+import AdminNav from '../../components/nav/AdminNav'
 
 const Password = () => {
+    const {user} = useSelector((state) => ({...state}))
     const [password, setpassword] = useState('')
     const [loading, setloading] = useState(false)
     const handleSubmit = (e) => {
@@ -36,7 +39,7 @@ const Password = () => {
         <div className='container-fluid'>
             <div className='row'>
                 <div className='col-md-2'>
-                    <UserNav/>
+                    {user &&user.role ==="admin"?<AdminNav/>:<UserNav/>}
                 </div>
                 <div className='col'>
                     {loading ? <h4 className='text-danger'>Loading...</h4>:<h4>Password Update</h4>}

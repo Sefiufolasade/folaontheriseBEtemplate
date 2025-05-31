@@ -16,7 +16,7 @@ const AdminProductCard = ({product, handleRemove}) => {
       marginBottom: 10,
     }}
     className='p-1'
-    cover={<img alt="example" style={{width: 232,height: 232}}src={images && images.length ? images[0].url:"https://res.cloudinary.com/dvdy3c2af/image/upload/v1689964304/cld-sample-2.jpg"} />}
+    cover={<img alt={product.title || "product image"} style={{width: 232,height: 150, objectFit: "cover"}}src={images && images.length ? images[0].url:"https://res.cloudinary.com/dvdy3c2af/image/upload/v1689964304/cld-sample-2.jpg"} />}
     actions={[
         <Link to={`/admin/product/${slug}`}>
             <EditOutlined className='text-primary'/>

@@ -86,7 +86,7 @@ exports.list = async(req,res) => {
     try{
         const {sort, order, page} = req.body
         const currentPage = page  || 1
-        const perPage = 4
+        const perPage = 5
         const products = await Product.find({})
             .skip((currentPage - 1)* perPage)
             .populate('category')

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useCallback } from 'react'
 import { useSelector } from 'react-redux'
 import Resizer from 'react-image-file-resizer'
 import {Avatar, Badge} from 'antd'
@@ -6,10 +6,11 @@ import axios from 'axios'
 
 const FileUpload = ({values, setvalues, setloading}) => {
     const { user } = useSelector((state) => ({...state }))
-
-    const fileUploadAndResize = (e) => {
-        let files = e.target.files
-        let allUploadedFiles = values.images
+    
+    const fileUploadAndResize = useCallback((e) => {
+          
+            let files = e.target.files
+            let allUploadedFiles = values.images
 
         if (files) {
             console.log('files');
@@ -49,9 +50,9 @@ const FileUpload = ({values, setvalues, setloading}) => {
                 );
             }
         }
-    }
+    },[values])
 
-    const handleImageRemove = ( public_id ) => {
+    const handleImageRemove = useCallback(( public_id ) => {
         setloading(true)
         axios.post('http://localhost:8000/api/remove-image', 
         { public_id },
@@ -72,7 +73,7 @@ const FileUpload = ({values, setvalues, setloading}) => {
             console.log(err);
             setloading(false)
         })
-    }
+    },[values])
   return (
     <>
         <div className='row'>

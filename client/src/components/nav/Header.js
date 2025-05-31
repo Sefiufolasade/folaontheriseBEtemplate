@@ -98,8 +98,8 @@ const Header = ({isComingSoon}) => {
       ],
     },
     {
-      label: "Help",
-      key: "/help",
+      label: "Profile",
+      key: "/user/profile",
       icon: <SettingOutlined />,
       className: "float-right",
     },
@@ -137,10 +137,11 @@ const Header = ({isComingSoon}) => {
       navigate(e.key);
     }
   };
+  //  className="d-flex justify-content-around -mb-0"
   return (
     <>
-      <div className="d-flex justify-content-around -mb-0">
-        <img src="/Innterior_logo.png" onClick={() => navigate('/')} width={120} alt="innterior- home of all interior decoration"/>
+      <div className="logo-image">
+        <img src="/Innterior_logo.png" onClick={() => navigate('/')} width={120} alt="innterior - home of all interior decoration"/>
       </div>
       {!isComingSoon&&<Menu
         onClick={onClick}
@@ -148,6 +149,7 @@ const Header = ({isComingSoon}) => {
         mode="horizontal"
         user={user}
         items={items}
+        className="montserrat-complementary-dd header"
       />}
     </>
   );
