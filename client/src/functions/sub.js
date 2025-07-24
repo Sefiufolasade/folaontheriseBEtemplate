@@ -1,20 +1,20 @@
 import axios from 'axios';
 
 export const getSubs = async () => 
-    await axios.get("http://localhost:8000/api/subs"); 
+    await axios.get(`${process.env.REACT_APP_SERVER}/api/subs`); 
 
 export const getSub = async (slug) => 
-   await axios.get(`http://localhost:8000/api/sub/${slug}`);
+   await axios.get(`${process.env.REACT_APP_SERVER}/sub/${slug}`);
 
 export const removeSub = async (slug, authtoken) => 
-   await axios.delete(`http://localhost:8000/api/sub/${slug}`, {
+   await axios.delete(`${process.env.REACT_APP_SERVER}/sub/${slug}`, {
         headers: {
             authtoken
         }
     });
 
 export const updateSub = async (slug, sub, authtoken) => 
-   await axios.put(`http://localhost:8000/api/sub/${slug}`, sub,
+   await axios.put(`${process.env.REACT_APP_SERVER}/sub/${slug}`, sub,
     {
         headers: {
             authtoken
@@ -22,7 +22,7 @@ export const updateSub = async (slug, sub, authtoken) =>
     });
 
 export const createSub = async (sub, authtoken) => 
-   await axios.post(`http://localhost:8000/api/sub`, sub, 
+   await axios.post(`${process.env.REACT_APP_SERVER}/sub`, sub, 
     {
         headers: {
             authtoken

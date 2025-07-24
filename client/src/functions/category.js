@@ -1,20 +1,20 @@
 import axios from 'axios';
 
 export const getCategories = async () => 
-    await axios.get("http://localhost:8000/api/categories"); 
+    await axios.get(`${process.env.REACT_APP_SERVER}/categories`); 
 
 export const getCategory = async (slug) => 
-   await axios.get(`http://localhost:8000/api/category/${slug}`);
+   await axios.get(`${process.env.REACT_APP_SERVER}/category/${slug}`);
 
 export const removeCategory = async (slug, authtoken) => 
-   await axios.delete(`http://localhost:8000/api/category/${slug}`, {
+   await axios.delete(`${process.env.REACT_APP_SERVER}/category/${slug}`, {
         headers: {
             authtoken
         }
     });
 
 export const updateCategory = async (slug, category, authtoken) => 
-   await axios.put(`http://localhost:8000/api/category/${slug}`, category,
+   await axios.put(`${process.env.REACT_APP_SERVER}/category/${slug}`, category,
     {
         headers: {
             authtoken
@@ -22,7 +22,7 @@ export const updateCategory = async (slug, category, authtoken) =>
     });
 
 export const createCategory = async (category, authtoken) => 
-   await axios.post(`http://localhost:8000/api/category`, category, 
+   await axios.post(`${process.env.REACT_APP_SERVER}/api/category`, category, 
     {
         headers: {
             authtoken
@@ -30,4 +30,4 @@ export const createCategory = async (category, authtoken) =>
     });
 
 export const getCategorySubs = async(_id) =>
-    await axios.get(`http://localhost:8000/api/category/subs/${_id}`);
+    await axios.get(`${process.env.REACT_APP_SERVER}/category/subs/${_id}`);
