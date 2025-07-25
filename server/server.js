@@ -12,6 +12,13 @@ require('dotenv').config()
 // const product = reqiure("./routes/product")
 // const sub = reqiure("./routes/Sub")
 
+const allowOrigins = [
+    "https://innterior.vercel.app",
+    // vercel frontend
+    "http://localhost:3000"
+    // react dev server
+]
+
 
 const app = express()
 
@@ -24,7 +31,17 @@ mongoose.connect(process.env.DATABASE)
 //middlewares
 app.use(morgan('dev'))
 app.use(bodyParser.json())
-app.use(cors())
+app.use(cors({
+    origin: function (origin, callback) {
+        // allow requests with no origin (like curl or Postman)
+        if (!origin || allowOrigins.includes(origin)) {
+            callback(null, true);
+        }else{
+            callback(new Error("CORS not allowed from this origin"))
+        }
+    },
+    credentials: true
+}))
 
 
 //routes
