@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 export const createOrUpdateUser = async (authtoken) => {
-  return await axios.post(`${process.env.REACT_APP_SERVER}/create-or-update-user`, 
+  return await axios.post(`${process.env.APP_SERVER}/create-or-update-user`, 
   {},
   {
     headers: {
@@ -11,7 +11,7 @@ export const createOrUpdateUser = async (authtoken) => {
 }
 
 export const currentUser = async (authtoken) => {
-  return await axios.post(`${process.env.REACT_APP_SERVER}/current-user`, 
+  return await axios.post(`${process.env.APP_SERVER}/current-user`, 
   {},
   {
     headers: {
@@ -20,7 +20,7 @@ export const currentUser = async (authtoken) => {
   })
 }
 export const currentAdmin = async (authtoken) => {
-  return await axios.post(`${process.env.REACT_APP_SERVER}/current-admin`, 
+  return await axios.post(`${process.env.APP_SERVER}/current-admin`, 
   {},
   {
     headers: {

@@ -52,7 +52,7 @@ const BestSellers = () => {
         <ScrollMenu>
           {products.map((product) => (
             <div key={product._id} className="me-2">
-              <ProductCard product={product} />
+              <ProductCard product={product} key={product._id} />
             </div>
           ))}
         </ScrollMenu>
