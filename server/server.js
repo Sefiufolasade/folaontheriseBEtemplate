@@ -5,12 +5,12 @@ const fs = require('fs')
 const morgan = require ('morgan')
 const bodyParser = require ('body-parser')
 require('dotenv').config()
-// const auth = reqiure("./routes/auth")
-// const category = reqiure("./routes/category")
-// const cloudinary = reqiure("./routes/cloudinary")
-// const coupon = reqiure("./routes/coupon")
-// const product = reqiure("./routes/product")
-// const sub = reqiure("./routes/Sub")
+const auth = require("./routes/auth")
+const category = require("./routes/category")
+const cloudinary = require("./routes/cloudinary")
+const coupon = require("./routes/coupon")
+const product = require("./routes/product")
+const sub = require("./routes/Sub")
 
 const allowOrigins = [
     "https://innterior.vercel.app",
