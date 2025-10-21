@@ -9,7 +9,7 @@ export const createProduct = async (product, authtoken) =>
     });
 
 export const updateProduct = async (slug, product, authtoken) => 
-    await axios.put(`https://innteriors-backend.onrender.com/api/product/${slug}`, product, 
+    await axios.put(`${process.env.APP_SERVER}/product/${slug}`, product, 
     {
         headers: {
             authtoken
@@ -17,30 +17,30 @@ export const updateProduct = async (slug, product, authtoken) =>
     });
 
 export const getProductsByCount = async(count) =>
-    await axios.get(`https://innteriors-backend.onrender.com/api/products/${count}`)
+    await axios.get(`${process.env.APP_SERVER}/products/${count}`)
 
 export const removeProduct = async (slug, authtoken) =>
-    await axios.delete(`https://innteriors-backend.onrender.com/api/product/${slug}`, {
+    await axios.delete(`${process.env.APP_SERVER}/product/${slug}`, {
         headers:{
             authtoken,
         },
     })
 
 export const getProduct = async(slug) =>
-    await axios.get(`https://innteriors-backend.onrender.com/api/product/${slug}`)
+    await axios.get(`${process.env.APP_SERVER}/product/${slug}`)
 
 export const getProducts = async(sort,order,page) =>
-    await axios.post(`https://innteriors-backend.onrender.com/api/products`,{
+    await axios.post(`${process.env.APP_SERVER}/products`,{
         sort,
         order,
         page,
     })
 
 export const getProductsCount = async() =>
-    await axios.get(`https://innteriors-backend.onrender.com/api/products/total`)
+    await axios.get(`${process.env.APP_SERVER}/products/total`)
 
 export const productStar = async (productId, star, authtoken) =>
-    await axios.put(`https://innteriors-backend.onrender.com/api/product/star/${productId}`, 
+    await axios.put(`${process.env.APP_SERVER}/product/star/${productId}`, 
     { star }, 
     {
         headers: {
@@ -49,7 +49,7 @@ export const productStar = async (productId, star, authtoken) =>
     })
 
 export const getRelated = async(productId) =>
-    await axios.get(`https://innteriors-backend.onrender.com/api/product/related/${productId}`)
+    await axios.get(`${process.env.APP_SERVER}/product/related/${productId}`)
 
 export const fetchProductByFilter = async(arg) =>
-    await axios.post(`https://innteriors-backend.onrender.com/api/search/filters`, arg)
+    await axios.post(`${process.env.APP_SERVER}/search/filters`, arg)
