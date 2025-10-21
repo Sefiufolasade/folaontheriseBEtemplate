@@ -76,9 +76,9 @@ const Home = () => {
         <div className="container pb-3">
           <CategoryList />
         </div>
-        <div className="container pb-3">
+        {/* <div className="container pb-3">
           <SubList />
-        </div>
+        </div> */}
       </div>
     </div>
   );
