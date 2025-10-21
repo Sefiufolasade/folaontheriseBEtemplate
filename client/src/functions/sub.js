@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 export const getSubs = async () => 
-    await axios.get(`${process.env.APP_SERVER}/api/subs`); 
+    await axios.get(`${process.env.APP_SERVER}/subs`); 
 
 export const getSub = async (slug) => 
    await axios.get(`${process.env.APP_SERVER}/sub/${slug}`);
