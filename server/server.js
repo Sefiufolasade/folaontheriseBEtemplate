@@ -13,19 +13,15 @@ const product = require("./routes/product")
 const sub = require("./routes/Sub")
 
 const allowOrigins = [
-    "https://innterior.vercel.app",
-    // vercel frontend
-    "http://localhost:3000"
-    // react dev server
+    "https://innterior.vercel.app"
 ]
-
 
 const app = express()
 
 //db
-mongoose.connect(process.env.DATABASE)
-.then(() => console.log("DB CONNECTED"))
-.catch((err) => console.log("DB CONNECTION ERR:", err))
+// mongoose.connect(process.env.DATABASE)
+// .then(() => console.log("DB CONNECTED"))
+// .catch((err) => console.log("DB CONNECTION ERR:", err))
 
 
 //middlewares
@@ -43,15 +39,29 @@ app.use(cors({
     credentials: true
 }))
 
+app.get("/", (req, res) => {
+  res.json("Welcome to the server");
+});
+// app.use("/api/birthday", birthday);
+// app.use("/api/upload", cloudinary);
+
+mongoose
+  .connect(process.env.DATABASE, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
+  .then(() => console.log("CONNECTED TO DB"))
+  .catch((err) => console.log("FAILED CONNECTING TO DB -->", err));
+
 
 //routes
-fs.readdirSync('./routes').map((r)=>app.use('/api', require('./routes/'+ r)))
-// app.use("/api", auth)
-// app.use("/api", category)
-// app.use("/api", sub)
-// app.use("/api", cloudinary)
-// app.use("/api", coupon)
-// app.use("/api", product)
+// fs.readdirSync('./routes').map((r)=>app.use('/api', require('./routes/'+ r)))
+app.use("/api", auth)
+app.use("/api", category)
+app.use("/api", sub)
+app.use("/api", cloudinary)
+app.use("/api", coupon)
+app.use("/api", product)
 
 //port
 const port = process.env.PORT || 8000;
