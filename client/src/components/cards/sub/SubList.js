@@ -14,7 +14,7 @@ const SubList = () => {
       })
     }, [])
     
-    const showSubs = () => subs.map((s) => <div className='col btn text-primary btn-outlined-primary btn-raised btn-lg btn-block m-2'><Link to={`/sub/${s.slug}`}>{s.name}</Link></div>)
+    const showSubs = () => subs.length > 0 && subs.map((s) => <div className='col btn text-primary btn-outlined-primary btn-raised btn-lg btn-block m-2'><Link to={`/sub/${s.slug}`}>{s.name}</Link></div>)
   return (
     <div className='container'>
         <div className='row'>

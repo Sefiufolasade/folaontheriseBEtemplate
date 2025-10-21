@@ -14,7 +14,7 @@ const CategoryList = () => {
       })
     }, [])
     
-    const showCategories = () => categories.map((c) => <div className='col btn text-primary btn-outlined-primary btn-raised btn-lg btn-block m-2'><Link to={`/category/${c.slug}`}>{c.name}</Link></div>)
+    const showCategories = () => categories.length > 0 && categories.map((c) => <div className='col btn text-primary btn-outlined-primary btn-raised btn-lg btn-block m-2'><Link to={`/category/${c.slug}`}>{c.name}</Link></div>)
 
   return (
     <div className='container'>
