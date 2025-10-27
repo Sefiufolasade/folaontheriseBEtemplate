@@ -14,7 +14,7 @@ export const removeCoupon = async (slug, authtoken) =>
     });
 
 export const updateCoupon = async (slug, coupon, authtoken) => 
-   await axios.put(`${process.env.APP_SERVER}/coupon/${slug}`, coupon,
+   await axios.put(`https://innteriors-backend.onrender.com/api/coupon/${slug}`, coupon,
     {
         headers: {
             authtoken
@@ -22,7 +22,7 @@ export const updateCoupon = async (slug, coupon, authtoken) =>
     });
 
 export const createCoupon = async (coupon, authtoken) => 
-   await axios.post(`${process.env.APP_SERVER}/coupon`, coupon, 
+   await axios.post(`https://innteriors-backend.onrender.com/api/coupon`, coupon, 
     {
         headers: {
             authtoken
