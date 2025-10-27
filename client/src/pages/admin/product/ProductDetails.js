@@ -43,7 +43,7 @@ const ProductDetails = () => {
       .then((res) => {
           setproduct(res.data)
           // setloading(false)
-          console.log(res.data._id);
+          // console.log(res.data._id);
           //load related
           getRelated(res.data._id).then(res => setrelated(res.data))
       })
