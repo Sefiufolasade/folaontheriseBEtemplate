@@ -39,6 +39,35 @@ const ProductCard = ({ product }) => {
       payload: unique,
     });
   };
+    return (
+      <>
+          {product && product.ratings && product.ratings.length > 0 ? (Newrating(product)):<div className='d-flex pt-1 justify-content-center mb-0'><p>No ratings yet</p></div>}
+          <Card
+              hoverable
+              style={{
+              width: 200,
+              marginBottom: 10,
+              marginTop: 0,
+              }}
+              className='p-1 mt-0'
+              cover={<img alt="example" style={{height: 150}}src={images && images.length ? images[0].url:"https://res.cloudinary.com/dvdy3c2af/image/upload/v1748417009/Innterior_qtmjp7.png"} />}
+              actions={[
+                  <Link to={`/product-details/${slug}`}>
+                      <EyeOutlined className='text-success'/><br/>View Details
+                  </Link>,
+                  <Tooltip>
+                      <a onClick={handleAddToCart}><ShoppingCartOutlined className='text-primary'/><br/> Add to Cart</a>
+                  </Tooltip>
+              ]}
+          >
+              <Meta title={title} description={`${description && description.substring(0,25)}...`} />
+          </Card>
+      </>
+
+    )
+};
+
+export default ProductCard;
   //   return (
   //     <div className="flex justify-center">
   //       <div className="relative w-72 rounded-3xl overflow-hidden shadow-lg bg-gradient-to-b from-purple-100 to-white hover:shadow-2xl transition-all duration-300">
@@ -101,33 +130,3 @@ const ProductCard = ({ product }) => {
   //       </div>
   //     </div>
   //   );
-
-    return (
-      <>
-          {product && product.ratings && product.ratings.length > 0 ? (Newrating(product)):<div className='d-flex pt-1 justify-content-center mb-0'><p>No ratings yet</p></div>}
-          <Card
-              hoverable
-              style={{
-              width: 200,
-              marginBottom: 10,
-              marginTop: 0,
-              }}
-              className='p-1 mt-0'
-              cover={<img alt="example" style={{height: 150}}src={images && images.length ? images[0].url:"https://res.cloudinary.com/dvdy3c2af/image/upload/v1748417009/Innterior_qtmjp7.png"} />}
-              actions={[
-                  <Link to={`/product-details/${slug}`}>
-                      <EyeOutlined className='text-success'/><br/>View Details
-                  </Link>,
-                  <Tooltip>
-                      <a onClick={handleAddToCart}><ShoppingCartOutlined className='text-primary'/><br/> Add to Cart</a>
-                  </Tooltip>
-              ]}
-          >
-              <Meta title={title} description={`${description && description.substring(0,25)}...`} />
-          </Card>
-      </>
-
-    )
-};
-
-export default ProductCard;
