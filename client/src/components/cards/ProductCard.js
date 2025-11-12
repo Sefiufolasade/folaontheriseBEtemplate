@@ -13,7 +13,7 @@ import { useSelector, useDispatch } from "react-redux";
 const ProductCard = ({ product }) => {
   const { Meta } = Card;
   const { title, description, images, slug } = product;
-//   const { title, description, images, slug, price, size, color } = product;
+  //   const { title, description, images, slug, price, size, color } = product;
   const [tooltip, settooltip] = useState("Click to Add");
   const { user, cart } = useSelector((state) => ({ ...state }));
   const dispatch = useDispatch();
