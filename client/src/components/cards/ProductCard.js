@@ -3,8 +3,7 @@ import { Card, Tooltip } from "antd";
 import { Link } from "react-router-dom";
 import {
   EyeOutlined,
-  ShoppingCartOutlined,
-  HeartOutlined,
+  ShoppingCartOutlined
 } from "@ant-design/icons";
 import Newrating from "../../functions/rating";
 import _ from "lodash";
@@ -15,7 +14,7 @@ const ProductCard = ({ product }) => {
   const { title, description, images, slug } = product;
   //   const { title, description, images, slug, price, size, color } = product;
   const [tooltip, settooltip] = useState("Click to Add");
-  const { user, cart } = useSelector((state) => ({ ...state }));
+  // const { user, cart } = useSelector((state) => ({ ...state }));
   const dispatch = useDispatch();
   useEffect(() => {
     document.title = `Innterior - ${product.title}`
