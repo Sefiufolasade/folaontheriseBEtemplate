@@ -18,7 +18,7 @@ const ProductCard = ({ product }) => {
   const { user, cart } = useSelector((state) => ({ ...state }));
   const dispatch = useDispatch();
   useEffect(() => {
-    document.title = `${product.title}`
+    document.title = `Innterior - ${product.title}`
   }, [product])
   
 
