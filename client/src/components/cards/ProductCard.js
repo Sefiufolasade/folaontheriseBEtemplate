@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Card, Tooltip } from "antd";
 import { Link } from "react-router-dom";
 import {
@@ -17,6 +17,10 @@ const ProductCard = ({ product }) => {
   const [tooltip, settooltip] = useState("Click to Add");
   const { user, cart } = useSelector((state) => ({ ...state }));
   const dispatch = useDispatch();
+  useEffect(() => {
+    document.title = `${product.title}`
+  }, [product])
+  
 
   const handleAddToCart = () => {
     let cart = [];
