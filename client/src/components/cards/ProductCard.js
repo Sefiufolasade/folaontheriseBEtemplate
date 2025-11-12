@@ -7,7 +7,8 @@ import {
 } from "@ant-design/icons";
 import Newrating from "../../functions/rating";
 import _ from "lodash";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
+// import { useSelector, useDispatch } from "react-redux";
 
 const ProductCard = ({ product }) => {
   const { Meta } = Card;
