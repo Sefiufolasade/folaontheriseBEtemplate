@@ -18,7 +18,7 @@ const allowOrigins = [
     "https://folaontherise.com","https://www.folaontherise.com"
 ]
 
-const app = express()
+const app = express();
 
 //middlewares
 app.use(morgan('dev'))
