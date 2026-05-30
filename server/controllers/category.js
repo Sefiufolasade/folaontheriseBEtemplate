@@ -3,7 +3,7 @@
 // const Sub = require('../models/sub')
 // const slugify = require('slugify')
 
-const Category = require('../models/Category');
+const Category = require('../models/category');
 const { sendSuccess } = require('../utils/apiResponse');
 const asyncHandler = require('../utils/asyncHandler');
 const AppError = require('../utils/AppError');
