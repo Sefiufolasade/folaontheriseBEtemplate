@@ -71,12 +71,13 @@ mongoose
 
 //routes
 // fs.readdirSync('./routes').map((r)=>app.use('/api', require('./routes/'+ r)))
-app.use("/api", auth)
-app.use("/api", category)
-app.use("/api", sub)
-app.use("/api", cloudinary)
-app.use("/api", coupon)
-app.use("/api", product)
+
+// app.use("/api", auth)
+// app.use("/api", category)
+// app.use("/api", sub)
+// app.use("/api", cloudinary)
+// app.use("/api", coupon)
+// app.use("/api", product)
 
 //port
 const port = process.env.PORT || 8000;
