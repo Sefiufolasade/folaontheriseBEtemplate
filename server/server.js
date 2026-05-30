@@ -11,7 +11,7 @@ const cloudinary = require("./routes/cloudinary")
 const coupon = require("./routes/coupon")
 const product = require("./routes/product")
 const sub = require("./routes/Sub")
-const logger = require('./config/logger');
+// const logger = require('./config/logger');
 // const { startCronJobs } = require('./jobs');
 
 const allowOrigins = [
@@ -38,8 +38,6 @@ app.use(cors({
 app.get("/", (req, res) => {
   res.json("Welcome to the server");
 });
-// app.use("/api/birthday", birthday);
-// app.use("/api/upload", cloudinary);
 
 mongoose
   .connect(process.env.DATABASE, {
