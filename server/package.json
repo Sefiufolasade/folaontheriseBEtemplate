@@ -9,7 +9,7 @@
     "lint": "eslint ./**/*.js",
     "lint:fix": "eslint ./**/*.js --fix",
     "format": "prettier --write ./**/*.js",
-    "test": "jest --coverage",
+    "test": "jest --coverage"
   },
   "keywords": [],
   "author": "",
