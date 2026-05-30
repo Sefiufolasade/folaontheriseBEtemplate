@@ -73,7 +73,7 @@ mongoose
 // fs.readdirSync('./routes').map((r)=>app.use('/api', require('./routes/'+ r)))
 
 // app.use("/api", auth)
-// app.use("/api", category)
+app.use("/api", category)
 // app.use("/api", sub)
 // app.use("/api", cloudinary)
 // app.use("/api", coupon)
