@@ -11,6 +11,8 @@ const cloudinary = require("./routes/cloudinary")
 const coupon = require("./routes/coupon")
 const product = require("./routes/product")
 const sub = require("./routes/Sub")
+const logger = require('./config/logger');
+const { startCronJobs } = require('./jobs');
 
 const allowOrigins = [
     "https://innterior.vercel.app"
@@ -52,6 +54,27 @@ mongoose
   })
   .then(() => console.log("CONNECTED TO DB"))
   .catch((err) => console.log("FAILED CONNECTING TO DB -->", err));
+
+// Handle unhandled promise rejections
+process.on('unhandledRejection', (err) => {
+  logger.error('UNHANDLED REJECTION! Shutting down...', { error: err.message });
+  server.close(() => process.exit(1));
+});
+
+// Handle uncaught exceptions
+process.on('uncaughtException', (err) => {
+  logger.error('UNCAUGHT EXCEPTION! Shutting down...', { error: err.message });
+  process.exit(1);
+});
+
+// Graceful shutdown
+process.on('SIGTERM', () => {
+  logger.info('SIGTERM received. Shutting down gracefully...');
+  server.close(() => {
+    logger.info('Process terminated.');
+    process.exit(0);
+  });
+});
 
 
 //routes
