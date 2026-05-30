@@ -15,7 +15,7 @@ const sub = require("./routes/Sub")
 // const { startCronJobs } = require('./jobs');
 
 const allowOrigins = [
-    "https://innterior.vercel.app"
+    "https://folaontherise.com","https://www.folaontherise.com"
 ]
 
 const app = express()
