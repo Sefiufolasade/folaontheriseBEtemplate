@@ -12,7 +12,7 @@ const coupon = require("./routes/coupon")
 const product = require("./routes/product")
 const sub = require("./routes/Sub")
 const logger = require('./config/logger');
-const { startCronJobs } = require('./jobs');
+// const { startCronJobs } = require('./jobs');
 
 const allowOrigins = [
     "https://innterior.vercel.app"
