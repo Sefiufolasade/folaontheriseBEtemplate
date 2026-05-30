@@ -5,12 +5,12 @@ const fs = require('fs')
 const morgan = require ('morgan')
 const bodyParser = require ('body-parser')
 require('dotenv').config()
-const auth = require("./routes/auth")
-const category = require("./routes/category")
-const cloudinary = require("./routes/cloudinary")
-const coupon = require("./routes/coupon")
-const product = require("./routes/product")
-const sub = require("./routes/Sub")
+// const auth = require("./routes/auth")
+// const category = require("./routes/category")
+// const cloudinary = require("./routes/cloudinary")
+// const coupon = require("./routes/coupon")
+// const product = require("./routes/product")
+// const sub = require("./routes/Sub")
 // const logger = require('./config/logger');
 // const { startCronJobs } = require('./jobs');
 
