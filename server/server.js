@@ -20,12 +20,6 @@ const allowOrigins = [
 
 const app = express()
 
-//db
-// mongoose.connect(process.env.DATABASE)
-// .then(() => console.log("DB CONNECTED"))
-// .catch((err) => console.log("DB CONNECTION ERR:", err))
-
-
 //middlewares
 app.use(morgan('dev'))
 app.use(bodyParser.json())
